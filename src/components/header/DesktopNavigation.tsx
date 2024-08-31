@@ -11,13 +11,13 @@ export default function DesktopNavigation(
     <nav {...props}>
       <ul className="flex flex-nowrap rounded-md px-2 text-base font-light">
         <li className="">
-          <NavItem href="/blog">博客</NavItem>
+          <NavItem href="/blog">Blog | 随记</NavItem>
         </li>
         <li className="">
-          <NavItem href="/blog">关于</NavItem>
+          <NavItem href="/blog">About | 关于</NavItem>
         </li>
         <li className="">
-          <NavItem href="/blog">联系</NavItem>
+          <NavItem href="/blog">Contact | 联系</NavItem>
         </li>
       </ul>
     </nav>
@@ -35,7 +35,7 @@ function NavItem({
     <Link
       href={href}
       className={clsx(
-        "relative block px-5 py-2 transition hover:underline",
+        "relative block px-5 py-2 font-normal transition",
         isActive
           ? "text-stone-500 dark:text-stone-400"
           : "hover:text-stone-500 dark:hover:text-stone-400"

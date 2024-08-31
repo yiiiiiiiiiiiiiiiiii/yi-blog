@@ -13,7 +13,7 @@ const blogDataList = [
 
 export default function BlogList() {
   return (
-    <div>
+    <div className="">
       {blogDataList.map((blogData, ndx) => {
         return <BlogItem key={ndx} {...blogData} />;
       })}
@@ -33,12 +33,12 @@ interface IBlogItemProps {
 
 function BlogItem({ image, title, date, detail }: IBlogItemProps) {
   return (
-    <div className="flex justify-start h-48">
-      <img src={image.src} className="h-full" alt="" />
+    <div className="flex justify-start h-48 p-5 ">
+      <img src={image.src} className="h-full mr-8" alt="" />
       <div className="flex flex-col">
-        <div className="text-base font-sans font-medium">{title}</div>
-        <div className="text-sm font-mono font-light">{date}</div>
-        <div>{detail}</div>
+        <div className="text-base font-sans font-medium mb-4">{title}</div>
+        <div className="text-xs font-mono font-light mb-4">{date}</div>
+        <div className="text-base">{detail}</div>
       </div>
     </div>
   );
