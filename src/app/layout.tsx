@@ -18,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`dark:bg-black dark:text-white`}>
-        <Header />
-        {children}
+        <main className="container mx-auto">
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );

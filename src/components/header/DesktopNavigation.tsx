@@ -35,7 +35,7 @@ function NavItem({
     <Link
       href={href}
       className={clsx(
-        "relative block px-5 py-2 font-normal transition",
+        "relative block px-5 py-2 font-light transition",
         isActive
           ? "text-stone-500 dark:text-stone-400"
           : "hover:text-stone-500 dark:hover:text-stone-400"
