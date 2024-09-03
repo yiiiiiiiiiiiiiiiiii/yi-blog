@@ -16,12 +16,12 @@ export default function Overview({
   createAt,
 }: IOverviewProps) {
   return (
-    <div className="w-full break-after-column mb-8 border-b-2">
+    <div className="w-full break-after-column mb-8 border-b-2 border-b-black">
       <Link href={`/blog/${id}`}>
-        <div className="text-xl font-medium mb-4">{title}</div>
+        <div className="text-xl font-medium mb-3">{title}</div>
       </Link>
       <div className="text-sm mb-5">{content}</div>
-      <div className="mb-6">
+      <div className="mb-8">
         <div className="text-sm font-normal italic">
           创建时间：{moment(createAt).format()}
         </div>

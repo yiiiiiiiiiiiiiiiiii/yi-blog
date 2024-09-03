@@ -21,7 +21,7 @@ export default function Introduction() {
         <div className="mt-3">{data.describeCN}</div>
       </div>
       <Link href={"/about"}>
-        <div className="w-fit px-6 py-4 border-2 rounded-lg  text-neutral-700 bg-white border-neutral-700 hover:bg-neutral-100 dark:text-neutral-400 dark:bg-black dark:border-neutral-400 dark:hover:bg-neutral-900">
+        <div className="w-fit px-6 py-4 border-2  text-neutral-700 bg-white border-neutral-700 hover:bg-neutral-100 dark:text-neutral-400 dark:bg-black dark:border-neutral-400 dark:hover:bg-neutral-900">
           About Me | 关于我的
         </div>
       </Link>
