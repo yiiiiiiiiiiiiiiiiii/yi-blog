@@ -1,12 +1,10 @@
 // import Photos from "@/components/Photos";
 import Introduction from "@/components/Introduction";
-import Blogs from "@/components/Blogs";
 
 export default function Page() {
   return (
-    <>
+    <div>
       <Introduction />
-      <Blogs />
-    </>
+    </div>
   );
 }
