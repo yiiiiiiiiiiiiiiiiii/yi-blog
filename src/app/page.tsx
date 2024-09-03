@@ -2,7 +2,7 @@
 import Introduction from "@/components/Introduction";
 import Blogs from "@/components/Blogs";
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Introduction />

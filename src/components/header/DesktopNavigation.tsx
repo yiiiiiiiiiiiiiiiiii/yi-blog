@@ -37,7 +37,7 @@ function NavItem({
       className={clsx(
         "relative block px-5 py-2 font-normal transition",
         isActive
-          ? "text-stone-500 dark:text-stone-400"
+          ? "underline"
           : "hover:text-stone-500 dark:hover:text-stone-400"
       )}
     >
