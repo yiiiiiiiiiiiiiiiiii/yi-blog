@@ -1,7 +1,4 @@
-interface IData {
-  title: string;
-  describe: string;
-}
+import Link from "next/link";
 
 const data = {
   title: "Front End Developer",
@@ -14,18 +11,20 @@ const data = {
 
 export default function Introduction() {
   return (
-    <div className="w-4/5 mt-8 text-left">
-      <div className="">
-        <div className="text-3xl font-medium">{data.title}</div>
+    <div className="flex flex-col w-full justify-start items-center mb-20 text-center">
+      <div className="text-2xl font-medium mb-10">
+        <div className="">{data.title}</div>
         <div className="mt-3">{data.titleCN}</div>
       </div>
-      <div className="mt-8 text-zinc-500">
+      <div className="dark:text-neutral-400 text-neutral-700 mb-10">
         <div className="">{data.describe}</div>
         <div className="mt-3">{data.describeCN}</div>
       </div>
-      <div className="w-fit p-5 mt-8 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-900 border-spacing-0 border-2 border-zinc-500">
-        About Me | 关于我的
-      </div>
+      <Link href={"/about"}>
+        <div className="w-fit px-6 py-4 border-2 rounded-lg  text-neutral-700 bg-white border-neutral-700 hover:bg-neutral-100 dark:text-neutral-400 dark:bg-black dark:border-neutral-400 dark:hover:bg-neutral-900">
+          About Me | 关于我的
+        </div>
+      </Link>
     </div>
   );
 }

@@ -14,10 +14,10 @@ export default function DesktopNavigation(
           <NavItem href="/blog">Blog | 随记</NavItem>
         </li>
         <li className="">
-          <NavItem href="/blog">About | 关于</NavItem>
+          <NavItem href="/about">About | 关于</NavItem>
         </li>
         <li className="">
-          <NavItem href="/blog">Contact | 联系</NavItem>
+          <NavItem href="/contact">Contact | 联系</NavItem>
         </li>
       </ul>
     </nav>
