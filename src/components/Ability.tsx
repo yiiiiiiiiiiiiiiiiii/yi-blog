@@ -1,18 +1,57 @@
+const abilityInfoList = [
+  {
+    name: "React",
+    link: "https://reactjs.org/",
+  },
+  {
+    name: "NEXT.js",
+    link: "https://nextjs.org/",
+  },
+  {
+    name: "tailwind",
+    link: "https://tailwindcss.com/",
+  },
+  {
+    name: "npm",
+    link: "https://www.npmjs.com/",
+  },
+  {
+    name: "webpack",
+    link: "https://webpack.js.org/",
+  },
+  {
+    name: "Nodejs",
+    link: "https://nodejs.org/en/",
+  },
+  {
+    name: "Express",
+    link: "https://expressjs.com/",
+  },
+  {
+    name: "PostgreSQL",
+    link: "https://www.postgresql.org/",
+  },
+  {
+    name: "Prisma",
+    link: "https://www.prisma.io/",
+  },
+  {
+    name: "Docker",
+    link: "https://www.docker.com/",
+  },
+];
 export default function Ability() {
   return (
-    <div>
-      {/* <div className="mx-auto">能力</div> */}
-      <div className="columns-5 text-xl font-medium text-center gap-y-5">
-        <div>React</div>
-        <div>Nextjs</div>
-        <div>tailwind</div>
-        <div>Npm</div>
-        <div>Webpack</div>
-        <div>Nodejs</div>
-        <div>Express</div>
-        <div>Postgres</div>
-        <div>Prisma</div>
-        <div>Docker</div>
+    <div className="flex flex-col items-center justify-start w-full mb-36">
+      <div className="w-full h-12 mx-auto mb-5 text-center font-bold">技术</div>
+      <div className="w-full grid grid-cols-5 gap-x-5 gap-y-5">
+        {abilityInfoList.map((ability, index) => (
+          <a key={index} href={ability.link} target="_blank" rel="noreferrer">
+            <div className="flex items-center justify-center" key={index}>
+              {ability.name}
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   );
