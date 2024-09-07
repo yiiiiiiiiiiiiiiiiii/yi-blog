@@ -1,15 +1,20 @@
-function IconSearch(props: React.SVGProps<SVGSVGElement>) {
+export default function IconInputSearch(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      viewBox="0 0 512 512"
-      fill="currentColor"
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      viewBox="0 0 24 24"
       height="1em"
       width="1em"
       {...props}
     >
-      <path d="M456.69 421.39L362.6 327.3a173.81 173.81 0 0034.84-104.58C397.44 126.38 319.06 48 222.72 48S48 126.38 48 222.72s78.38 174.72 174.72 174.72A173.81 173.81 0 00327.3 362.6l94.09 94.09a25 25 0 0035.3-35.3zM97.92 222.72a124.8 124.8 0 11124.8 124.8 124.95 124.95 0 01-124.8-124.8z" />
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <path d="M19 11V8a2 2 0 00-2-2H5a2 2 0 00-2 2v5a2 2 0 002 2h5" />
+      <path d="M18 15.5 A2.5 2.5 0 0 1 15.5 18 A2.5 2.5 0 0 1 13 15.5 A2.5 2.5 0 0 1 18 15.5 z" />
+      <path d="M17.5 17.5L20 20" />
     </svg>
   );
 }
-
-export default IconSearch;

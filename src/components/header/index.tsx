@@ -2,6 +2,7 @@ import Link from "next/link";
 import ModeToggle from "./ModeToggle";
 import DesktopNavigation from "./DesktopNavigation";
 import GithubLink from "./GithubLink";
+import IconSearch from "./Search";
 
 export default function Header() {
   return (
@@ -12,8 +13,9 @@ export default function Header() {
         </Link>
         <DesktopNavigation />
         <div className="flex flex-row justify-center items-center space-x-6">
-          <GithubLink />
+          <IconSearch />
           <ModeToggle />
+          <GithubLink />
         </div>
       </div>
     </div>

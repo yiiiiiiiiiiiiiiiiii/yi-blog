@@ -1,22 +1,13 @@
-function IconArrowBack(props: React.SVGProps<SVGSVGElement>) {
+export default function IconArrowBack(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
-      viewBox="0 0 512 512"
+      viewBox="0 0 24 24"
       fill="currentColor"
       height="1em"
       width="1em"
       {...props}
     >
-      <path
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth={48}
-        d="M244 400L100 256l144-144M120 256h292"
-      />
+      <path d="M21 11H6.414l5.293-5.293-1.414-1.414L2.586 12l7.707 7.707 1.414-1.414L6.414 13H21z" />
     </svg>
   );
 }
-
-export default IconArrowBack;

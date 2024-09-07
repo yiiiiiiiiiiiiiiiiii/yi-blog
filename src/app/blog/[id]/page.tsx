@@ -2,6 +2,7 @@ import Link from "next/link";
 import IconArrowBack from "@/components/SvgIcon/Back";
 import prisma from "@/lib/db";
 import Welcome from "@/markdown/welcome.mdx";
+import BackToTop from "@/components/BackToTop";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const blog = await prisma.blog.findUnique({
@@ -24,6 +25,7 @@ export default async function Page({ params }: { params: { id: string } }) {
       <div className="text-3xl text-black font-bold mb-4">{blog.title}</div>
       <div className="text-sm italic mb-10">{blog.createAt.toDateString()}</div>
       <Welcome />
+      <BackToTop />
     </div>
   );
 }
