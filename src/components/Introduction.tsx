@@ -12,7 +12,7 @@ const data = {
 export default function Introduction() {
   return (
     <div className="flex flex-col w-full justify-start items-center mb-20 mt-8 text-center">
-      <div className="text-2xl font-medium mb-10">
+      <div className="text-2xl font-bold mb-10">
         <div className="">{data.title}</div>
         <div className="mt-3">{data.titleCN}</div>
       </div>

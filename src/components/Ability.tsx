@@ -43,7 +43,9 @@ const abilityInfoList = [
 export default function Ability() {
   return (
     <div className="flex flex-col items-center justify-start w-full mb-36">
-      <div className="w-full h-12 mx-auto mb-5 text-center font-bold">技术</div>
+      <div className="w-full h-12 mx-auto mb-5 text-center font-bold">
+        Technical ability | 技术能力
+      </div>
       <div className="w-full grid grid-cols-5 gap-x-5 gap-y-5">
         {abilityInfoList.map((ability, index) => (
           <a key={index} href={ability.link} target="_blank" rel="noreferrer">

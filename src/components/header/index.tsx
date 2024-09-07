@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ModeToggle from "./ModeToggle";
 import DesktopNavigation from "./DesktopNavigation";
+import GithubLink from "./GithubLink";
 
 export default function Header() {
   return (
@@ -10,7 +11,10 @@ export default function Header() {
           <div className="text-4xl font-black">Yi</div>
         </Link>
         <DesktopNavigation />
-        <ModeToggle />
+        <div className="flex flex-row justify-center items-center space-x-6">
+          <GithubLink />
+          <ModeToggle />
+        </div>
       </div>
     </div>
   );
