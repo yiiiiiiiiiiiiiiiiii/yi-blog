@@ -6,6 +6,8 @@ import Ability from "@/components/Ability";
 import BackToTop from "@/components/BackToTop";
 import QA from "@/components/QA";
 import Contact from "@/components/Contact";
+import HomeOverView from "@/components/Blog/HomeOverView";
+import Feature from "@/components/Feature";
 
 export default function Page() {
   return (
@@ -13,8 +15,10 @@ export default function Page() {
       <main className="container mx-auto">
         <Introduction />
         <Ability />
-        <QA />
+        <Feature />
+        <HomeOverView />
         <Contact />
+        <QA />
       </main>
       <Record />
       <BackToTop />
