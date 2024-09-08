@@ -10,7 +10,7 @@ export default function Header() {
       <div className="w-full grid grid-cols-12 py-10">
         <div className="col-span-2">
           <Link href={"/"}>
-            <div className="text-4xl font-black">Yi</div>
+            <div className="text-4xl font-black">Y18i</div>
           </Link>
         </div>
         <div className="col-span-8">
