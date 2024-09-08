@@ -14,17 +14,21 @@ export default async function Page({ params }: { params: { id: string } }) {
   }
 
   return (
-    <div className="">
-      <Link
-        href={"/blog"}
-        className="flex justify-start items-center mb-6 no-underline italic "
-      >
-        <IconArrowBack className="w-4 h-4 mr-2" />
-        回到文章列表｜Back to blog list
-      </Link>
-      <div className="text-3xl text-black font-bold mb-4">{blog.title}</div>
-      <div className="text-sm italic mb-10">{blog.createAt.toDateString()}</div>
-      <Welcome />
+    <div className="grid grid-cols-12">
+      <div className="col-start-3 col-span-8">
+        <Link
+          href={"/blog"}
+          className="flex justify-start items-center mb-6 no-underline italic "
+        >
+          <IconArrowBack className="w-4 h-4 mr-2" />
+          回到文章列表｜Back to blog list
+        </Link>
+        <div className="text-3xl text-black font-bold mb-4">{blog.title}</div>
+        <div className="text-sm italic mb-10">
+          {blog.createAt.toDateString()}
+        </div>
+        <Welcome />
+      </div>
       <BackToTop />
     </div>
   );
