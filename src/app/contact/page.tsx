@@ -1,14 +1,24 @@
+import IconWechat from "@/components/SvgIcon/Wechat";
+import IconEmail from "@/components/SvgIcon/Email";
+import IconGithub from "@/components/SvgIcon/Github";
+
 export default function Page() {
   return (
     <div className="flex flex-row justify-between items-start gap-20">
       <div className="w-full flex flex-col items-start">
         <div className="text-5xl font-bold mb-5">Y18i</div>
         <div className="text-lg mb-5">y18i - Next.js Enginee</div>
-        <div className="flex flex-row space-x-10 items-center mb-5">
-          <div>WeChat</div>
-          <div>Email</div>
-          {/* <div>yiiiiii2024@163.com</div> */}
-          <div>Github</div>
+        <div className="mb-5">
+          <div>
+            <IconWechat className="w-8 h-8" />
+            WeChat
+          </div>
+          <div>
+            <IconEmail className="w-8 h-8" /> <div>Email</div>
+          </div>
+          <div>
+            <IconGithub className="w-8 h-8" /> <div>Github</div>
+          </div>
         </div>
       </div>
       <div className="w-full flex flex-col items-start  ">
