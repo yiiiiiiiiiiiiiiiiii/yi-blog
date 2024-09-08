@@ -2,7 +2,6 @@ import Link from "next/link";
 import IconArrowBack from "@/components/SvgIcon/Back";
 import prisma from "@/lib/db";
 import Welcome from "@/markdown/welcome.mdx";
-import BackToTop from "@/components/BackToTop";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const blog = await prisma.blog.findUnique({
@@ -29,7 +28,6 @@ export default async function Page({ params }: { params: { id: string } }) {
         </div>
         <Welcome />
       </div>
-      <BackToTop />
     </div>
   );
 }

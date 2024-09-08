@@ -1,9 +1,7 @@
 // import Photos from "@/components/Photos";
-import Header from "@/components/Header";
 import Record from "@/components/Record";
 import Introduction from "@/components/Introduction";
 import Ability from "@/components/Ability";
-import BackToTop from "@/components/BackToTop";
 import QA from "@/components/QA";
 import Contact from "@/components/Contact";
 import HomeOverView from "@/components/Blog/HomeOverView";
@@ -21,7 +19,6 @@ export default function Page() {
         <QA />
       </main>
       <Record />
-      <BackToTop />
     </>
   );
 }
