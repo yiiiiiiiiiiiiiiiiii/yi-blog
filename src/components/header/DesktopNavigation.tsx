@@ -29,7 +29,8 @@ function NavItem({
   children,
 }: React.PropsWithChildren<{ href: string }>) {
   const pathname = usePathname();
-  let isActive = pathname === href;
+
+  let isActive = pathname.includes(href);
 
   return (
     <Link
@@ -37,8 +38,8 @@ function NavItem({
       className={clsx(
         "relative block pr-10 py-2 font-medium transition",
         isActive
-          ? "underline"
-          : "hover:text-stone-500 dark:hover:text-stone-400"
+          ? "underline text-blue-500"
+          : "hover:text-blue-500 dark:hover:text-blue-500"
       )}
     >
       {children}

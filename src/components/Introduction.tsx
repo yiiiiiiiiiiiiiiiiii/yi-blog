@@ -11,12 +11,12 @@ const data = {
 
 export default function Introduction() {
   return (
-    <div className="flex flex-col w-full justify-start items-center mb-20 mt-8 text-center">
-      <div className="text-2xl font-bold mb-10">
+    <div className="flex flex-col w-full justify-start items-center mb-24 mt-8 text-center">
+      <div className="text-2xl font-bold mb-12">
         <div className="">{data.title}</div>
         <div className="mt-3">{data.titleCN}</div>
       </div>
-      <div className="dark:text-neutral-400 text-neutral-700 mb-10">
+      <div className="dark:text-neutral-400 text-neutral-700 mb-12">
         <div className="">{data.describe}</div>
         <div className="mt-3">{data.describeCN}</div>
       </div>

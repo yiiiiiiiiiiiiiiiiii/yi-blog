@@ -42,7 +42,7 @@ const abilityInfoList = [
 ];
 export default function Ability() {
   return (
-    <div className="flex flex-col items-center justify-start w-full mb-36">
+    <div className="flex flex-col items-center justify-start w-full mb-24">
       <div className="w-full h-12 mx-auto mb-5 text-center font-bold">
         Technical ability | 技术能力
       </div>
