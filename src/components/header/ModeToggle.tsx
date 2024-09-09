@@ -28,7 +28,7 @@ export default function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group rounded-full bg-white/90 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+      className="group transition"
       onClick={toggleMode}
     >
       <IconSun className="dark:hidden h-6 w-6 transition " />
