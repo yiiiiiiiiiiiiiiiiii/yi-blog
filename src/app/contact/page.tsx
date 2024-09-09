@@ -4,9 +4,9 @@ import IconGithub from "@/components/SvgIcon/Github";
 
 export default function Page() {
   return (
-    <div className="flex flex-row justify-between items-start gap-24 mt-20">
-      <div className="mb-5 gap-y-8 w-full flex flex-col items-start">
-        <div className="mb-10">
+    <div className="flex flex-col lg:flex-row justify-between items-start  gap-20 mt-20">
+      <div className="mt-5 mb-5 gap-y-8 w-full flex flex-col items-start">
+        <div className="mb-5">
           <div className="text-2xl font-medium mb-5">Contact 联系</div>
           <div className="mb-5">
             You can contact me through the following contact information or
@@ -44,7 +44,7 @@ export default function Page() {
               type="text"
               name="name"
               id="name"
-              className="border-2 border-gray-300 rounded-md px-4 py-2 w-full"
+              className="border-2 border-gray-300 px-4 py-2 w-full"
               required
             />
           </div>
@@ -56,7 +56,7 @@ export default function Page() {
               type="email"
               name="email"
               id="email"
-              className="border-2 border-gray-300 rounded-md px-4 py-2 w-full"
+              className="border-2 border-gray-300 px-4 py-2 w-full"
               required
             />
           </div>
@@ -67,7 +67,7 @@ export default function Page() {
             <textarea
               name="message"
               id="message"
-              className="border-2 border-gray-300 rounded-md px-4 py-2 w-full h-40"
+              className="border-2 border-gray-300 px-4 py-2 w-full h-40"
               required
             ></textarea>
           </div>
