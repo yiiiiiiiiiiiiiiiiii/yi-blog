@@ -1,7 +1,7 @@
 import MajorButton from "./MajorButton";
 
 const data = {
-  title: "Front End Developer",
+  title: "A Front End Developer",
   titleCN: "前端开发专家",
   describe:
     "I’m Spencer, a software designer and entrepreneur based in New York City. I’m the founder and CEO of Planetaria, where we develop technologies that empower regular people to explore space on their own terms.",
@@ -11,8 +11,9 @@ const data = {
 
 export default function Introduction() {
   return (
-    <div className="flex flex-col w-full justify-start items-center mb-24 mt-8 text-center">
+    <div className="flex flex-col w-full justify-start items-center mb-24 mt-8 lg:mt-12 text-center">
       <div className="text-2xl font-bold mb-12">
+        <div className="text-5xl font-black mb-6">Y18i</div>
         <div className="">{data.title}</div>
         <div className="mt-3">{data.titleCN}</div>
       </div>
