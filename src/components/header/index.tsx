@@ -8,31 +8,26 @@ import MobileNavigation from "./MobileNavigation";
 export default function Header() {
   return (
     <div className="container mx-auto">
-      <div className="hidden lg:block w-full py-5">
-        <div className="grid grid-cols-12">
-          <div className="col-span-2 flex jusitfy-start items-center">
+      <div className="w-full py-5">
+        <div className="grid grid-cols-12 items-center">
+          <div className="hidden lg:flex col-span-2 jusitfy-start items-center">
             <Link href={"/"}>
               <div className="text-4xl font-black">Y18i</div>
             </Link>
           </div>
-          <div className="col-span-8">
+          <div className="hidden lg:block col-span-7">
             <DesktopNavigation />
           </div>
-          <div className="col-span-2">
+          <div className="lg:hidden col-span-2">
+            <MobileNavigation />
+          </div>
+          <div className="col-span-10 lg:col-span-3">
             <div className="flex flex-row justify-end items-center space-x-6">
               <IconSearch />
               <ModeToggle />
               <GithubLink />
             </div>
           </div>
-        </div>
-      </div>
-      <div className="lg:hidden w-full flex flex-row justify-between items-center py-3 px-3">
-        <MobileNavigation />
-        <div className="flex flex-row justify-end items-center space-x-6">
-          <IconSearch />
-          <ModeToggle />
-          <GithubLink />
         </div>
       </div>
     </div>

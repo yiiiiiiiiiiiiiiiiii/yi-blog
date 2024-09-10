@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`dark:bg-black dark:text-white`}>
+      <body className="dark:bg-black dark:text-white px-5 lg:px-0">
         <Header />
         {children}
         <BackToTop />

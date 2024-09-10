@@ -5,9 +5,10 @@ import IconGithub from "@/components/SvgIcon/Github";
 export default function Page() {
   return (
     <div className="flex flex-col lg:flex-row justify-between items-start  gap-20 mt-20">
-      <div className="mt-3 mb-5 gap-y-8 w-full flex flex-col items-start">
+      <div className="mt-4 mb-5 gap-y-8 w-full flex flex-col items-start">
         <div className="mb-5">
-          <div className="text-2xl font-medium mb-5">联系 ｜ Contact </div>
+          <div className="text-xl font-medium mb-2">联系方式</div>
+          <div className="text-xl font-medium mb-6">Contact</div>
           <div className="mb-3">
             可以通过以下的联系方式联系我，或者留下你的信息
           </div>

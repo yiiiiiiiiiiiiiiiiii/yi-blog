@@ -1,13 +1,17 @@
 export default function IconMenu(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
+      fill="none"
+      stroke="currentColor"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
       viewBox="0 0 24 24"
-      fill="currentColor"
       height="1em"
       width="1em"
       {...props}
     >
-      <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+      <path d="M3 12h18M3 6h18M3 18h18" />
     </svg>
   );
 }
