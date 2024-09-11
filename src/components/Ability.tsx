@@ -46,7 +46,7 @@ export default function Ability() {
       <div className="w-full h-12 mx-auto mb-5 text-center font-bold">
         Technical ability | 技术能力
       </div>
-      <div className="w-full grid grid-cols-5 gap-x-5 gap-y-5">
+      <div className="w-full justify-center grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-5">
         {abilityInfoList.map((ability, index) => (
           <a key={index} href={ability.link} target="_blank" rel="noreferrer">
             <div className="flex items-center justify-center" key={index}>

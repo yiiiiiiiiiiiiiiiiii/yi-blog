@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { useThrottleFn } from "ahooks";
-import IconBackToTop from "@/components/SvgIcon/IconBackToTop";
+import IconBackToTop from "@/components/SvgIcon/BackToTop";
 import scrollTo from "@/lib/utils/scrollTo";
 
 export default function BackToTop(props: React.HTMLAttributes<HTMLDivElement>) {
