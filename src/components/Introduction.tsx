@@ -2,7 +2,7 @@ import MajorButton from "./MajorButton";
 
 export default function Introduction() {
   return (
-    <div className="flex flex-col w-full justify-start items-center mb-32 mt-8 lg:mt-12 text-center">
+    <div className="flex flex-col w-full justify-start items-center mb-24 mt-8 lg:mt-12 text-center">
       <div className="text-2xl font-bold mb-12">
         <div className="text-5xl text-blue-500 font-black mb-6">Y18i</div>
         <div className="">A Front End Developer</div>

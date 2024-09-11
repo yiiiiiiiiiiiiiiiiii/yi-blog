@@ -6,7 +6,7 @@ export default async function HomeOverView({
   blogs: Awaited<ReturnType<typeof prisma.blog.findMany>>;
 }) {
   return (
-    <div className=" mb-28">
+    <div className="mb-24">
       <div className="w-full mx-auto mb-10 text-center font-bold">
         Top blog | 置顶博客
       </div>
