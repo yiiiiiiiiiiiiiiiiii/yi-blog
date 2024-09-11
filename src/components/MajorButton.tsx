@@ -6,7 +6,7 @@ export default function MajorButton({
 }: React.PropsWithChildren<{ href: string }>) {
   return (
     <Link href={href}>
-      <div className="text-center w-56 px-6 py-4 border-2 text-neutral-700 bg-white border-neutral-700 hover:bg-neutral-100 dark:text-neutral-400 dark:bg-black dark:border-neutral-400 dark:hover:bg-neutral-900">
+      <div className="text-center w-48 py-3 text-white bg-blue-500  hover:bg-blue-700 ">
         {children}
       </div>
     </Link>

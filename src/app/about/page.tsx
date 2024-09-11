@@ -54,7 +54,7 @@ export default function Page() {
               front-end development of first-line large factories.
             </div>
             <div>
-              从2018年开始从事前端开发工作，先后在携程，蔚来,
+              我从2018年开始从事前端开发工作，先后在携程，蔚来,
               阿里从事前端开发工作，积累了丰富的一线大厂前端开发的工作经验。
             </div>
           </div>

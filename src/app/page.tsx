@@ -1,22 +1,22 @@
-// import Photos from "@/components/Photos";
 import Record from "@/components/Record";
 import Introduction from "@/components/Introduction";
 import Ability from "@/components/Ability";
-import QA from "@/components/QA";
 import Contact from "@/components/Contact";
 import HomeOverView from "@/components/Blog/HomeOverView";
-import Feature from "@/components/Feature";
+import prisma from "@/lib/db";
 
-export default function Page() {
+export default async function Page() {
+  const blogs = await prisma.blog.findMany({
+    take: 2,
+  });
+
   return (
     <>
       <main className="container mx-auto">
         <Introduction />
         <Ability />
-        <Feature />
-        <HomeOverView />
+        <HomeOverView blogs={blogs} />
         <Contact />
-        <QA />
       </main>
       <Record />
     </>

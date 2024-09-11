@@ -12,7 +12,7 @@ export default function Header() {
         <div className="grid grid-cols-12 items-center">
           <div className="hidden lg:flex col-span-2 jusitfy-start items-center">
             <Link href={"/"}>
-              <div className="text-4xl font-black">Y18i</div>
+              <div className="text-4xl text-blue-500 font-black">Y18i</div>
             </Link>
           </div>
           <div className="hidden lg:block col-span-7">

@@ -28,11 +28,11 @@ export default function ModeToggle() {
     <button
       type="button"
       aria-label="Toggle dark mode"
-      className="group transition"
+      className="group transition "
       onClick={toggleMode}
     >
-      <IconSun className="dark:hidden h-6 w-6 transition " />
-      <IconMoon className="hidden dark:block h-6 w-6 transition text-white " />
+      <IconSun className="dark:hidden h-6 w-6 transition hover:text-blue-500" />
+      <IconMoon className="hidden dark:block h-6 w-6 transition text-white hover:text-blue-500" />
     </button>
   );
 }

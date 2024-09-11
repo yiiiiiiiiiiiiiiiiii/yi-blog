@@ -42,13 +42,19 @@ const abilityInfoList = [
 ];
 export default function Ability() {
   return (
-    <div className="flex flex-col items-center justify-start w-full mb-24">
-      <div className="w-full h-12 mx-auto mb-5 text-center font-bold">
+    <div className="flex flex-col items-center justify-start w-full mb-28">
+      <div className="w-full mx-auto mb-10 text-center font-bold">
         Technical ability | 技术能力
       </div>
-      <div className="w-full justify-center grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-5 gap-y-5">
+      <div className="w-full justify-center grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-x-10 gap-y-5">
         {abilityInfoList.map((ability, index) => (
-          <a key={index} href={ability.link} target="_blank" rel="noreferrer">
+          <a
+            key={index}
+            href={ability.link}
+            target="_blank"
+            rel="noreferrer"
+            className=" hover:text-blue-500 font-medium"
+          >
             <div className="flex items-center justify-center" key={index}>
               {ability.name}
             </div>

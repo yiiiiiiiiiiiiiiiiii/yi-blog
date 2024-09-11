@@ -6,7 +6,7 @@ export default async function Page() {
 
   return (
     <>
-      {blogs.concat(blogs, blogs).map((blog, ndx) => {
+      {blogs.map((blog, ndx) => {
         return (
           <div key={ndx} className="col-start-3 col-span-8">
             <Overview key={ndx} {...blog} />

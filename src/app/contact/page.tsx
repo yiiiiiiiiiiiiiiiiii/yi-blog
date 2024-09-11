@@ -8,8 +8,7 @@ export default function Page() {
       <div className="mb-5 gap-y-8 w-full">
         <div className="mb-10">
           <div className="mb-6">
-            <div className="text-2xl font-semibold mb-2">Contact</div>
-            <div className="text-2xl font-semibold">联系方式</div>
+            <div className="text-3xl font-bold mb-10">Contact Me 联系我</div>
           </div>
           <div className="">
             <div className="mb-3">
