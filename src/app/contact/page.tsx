@@ -1,5 +1,7 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 
+import sendMessage from "@/lib/actions/sendMessage";
+
 import IconWechat from "@/components/SvgIcon/Wechat";
 import IconEmail from "@/components/SvgIcon/Email";
 import IconGithub from "@/components/SvgIcon/Github";
@@ -26,7 +28,7 @@ export default function Page() {
           <div className="flex-1 flex-col justify-start items-start mb-10 ">
             <TabGroup manual defaultIndex={0}>
               <TabList
-                className={"flex flex-row justify-start items-center gap-5"}
+                className={"flex flex-row justify-start items-center gap-7"}
               >
                 <Tab as="div" className="data-[selected]:text-blue-500">
                   <IconEmail className="w-8 h-8" />
@@ -46,7 +48,7 @@ export default function Page() {
                       rel="noopener noreferrer"
                       className="text-sm text-blue-500 hover:underline"
                     >
-                      Click Send email｜点击发送邮件
+                      Send email｜发送邮件
                     </a>
                   </div>
                 </TabPanel>
@@ -58,7 +60,7 @@ export default function Page() {
                       rel="noopener noreferrer"
                       className="text-sm text-blue-500 hover:underline"
                     >
-                      Click to jump to Github｜点击跳转Github
+                      Jump to Github｜跳转Github
                     </a>
                   </div>
                 </TabPanel>
@@ -83,6 +85,7 @@ export default function Page() {
               method="post"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
+              action={sendMessage}
             >
               <input type="hidden" name="bot-field" />
               <div className="flex flex-col mb-5">
