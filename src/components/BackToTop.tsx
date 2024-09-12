@@ -31,7 +31,7 @@ export default function BackToTop(props: React.HTMLAttributes<HTMLDivElement>) {
       {...props}
       className={`${
         show ? "opacity-100" : "opacity-0 pointer-events-none"
-      }  text-blue-500 transition duration-200 ease-in-out fixed flex shadow-lg justify-center items-center bottom-10 right-10 lg:right-20 z-50`}
+      } cursor-pointer  text-blue-500 transition duration-200 ease-in-out fixed flex shadow-lg justify-center items-center bottom-10 right-10 lg:right-20 z-50`}
       onClick={scrollToTop}
     >
       <IconBackToTop className="w-12 h-12 " />

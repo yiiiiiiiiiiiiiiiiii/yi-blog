@@ -1,3 +1,5 @@
+import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
+
 import IconWechat from "@/components/SvgIcon/Wechat";
 import IconEmail from "@/components/SvgIcon/Email";
 import IconGithub from "@/components/SvgIcon/Github";
@@ -22,18 +24,54 @@ export default function Page() {
         </div>
         <div className="flex flex-col lg:flex-row justify-between items-start gap-5">
           <div className="flex-1 flex-col justify-start items-start ">
-            <div className="flex flex-row items-center gap-3 mb-5">
-              <IconEmail className="w-6 h-6" />
-              <div className="text-lg">yiiiii2020@163.com</div>
-            </div>
-            <div className="flex flex-row items-center gap-3 mb-5">
-              <IconGithub className="w-6 h-6" />
-              <div className="text-lg">yiiiii2020@163.com</div>
-            </div>
-            <div className="flex flex-row items-center gap-3 mb-5">
-              <IconWechat className="w-6 h-6" />
-              <div className="text-lg">Wechat:ZY18i</div>
-            </div>
+            <TabGroup manual defaultIndex={0}>
+              <TabList
+                className={"flex flex-row justify-start items-center gap-5"}
+              >
+                <Tab as="div" className="data-[selected]:text-blue-500">
+                  <IconEmail className="w-8 h-8" />
+                </Tab>
+                <Tab as="div" className="data-[selected]:text-blue-500">
+                  <IconGithub className="w-8 h-8" />
+                </Tab>
+                <Tab as="div" className="data-[selected]:text-blue-500">
+                  <IconWechat className="w-8 h-8" />
+                </Tab>
+              </TabList>
+              <TabPanels>
+                <TabPanel>
+                  <div className="mt-4">
+                    <a
+                      href="mailto:yiiiii2020@163.com"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-500 hover:underline"
+                    >
+                      Click Send email｜点击发送邮件
+                    </a>
+                  </div>
+                </TabPanel>
+                <TabPanel>
+                  <div className="mt-4">
+                    <a
+                      href="https://github.com/yiiiiiiiiiiiiiiiiii"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-blue-500 hover:underline"
+                    >
+                      Click to jump to Github｜点击跳转Github
+                    </a>
+                  </div>
+                </TabPanel>
+                <TabPanel>
+                  <img
+                    width={320}
+                    src="/images/Wechat.jpg"
+                    alt="微信二维码"
+                    className="object-contain mt-5"
+                  />
+                </TabPanel>
+              </TabPanels>
+            </TabGroup>
           </div>
           <div className="flex-1 w-full flex flex-col items-start  ">
             <form
