@@ -13,11 +13,11 @@ export default function Page() {
           </div>
           <div>
             <div className="mb-1">
-              It is mainly to precipitate the learning content, and it is also a
-              cool thing to have your own blog.
+              Mainly to precipitate the learning content, while feeling that
+              having your own blog is a cool thing
             </div>
             <div>
-              主要是为了沉淀学习的内容，另外有一个自己的博客也是一件很酷的事情。
+              主要是为了沉淀学习的内容，同时感觉有一个自己的博客是一件很酷的事情。
             </div>
           </div>
         </div>
@@ -28,12 +28,14 @@ export default function Page() {
           </div>
           <div>
             <div className="mb-1">
-              The style section uses tailwind CSS to make the site responsive.
-              The ORM part uses Prisma and the database uses Postgres.
+              The main body of the website adopts the NEXT.js framework and
+              tailwind CSS, which makes the website responsive. Postgres is used
+              as the database for data part, and Prisma is used as the ORM for
+              data operation.
             </div>
             <div>
-              样式部分使用了tailwind
-              Css，使得网站具有响应式的特点。ORM部分使用了Prisma，数据库使用了Postgres
+              网站主体采用NEXT.js框架，同时使用了tailwind
+              CSS，使得网站具有响应式的特点，数据部分使用Postgres作为数据库，并使用Prisma作为ORM进行数据的操作。
             </div>
           </div>
         </div>
