@@ -23,7 +23,7 @@ export default function Page() {
           </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-between items-start gap-5">
-          <div className="flex-1 flex-col justify-start items-start ">
+          <div className="flex-1 flex-col justify-start items-start mb-10 ">
             <TabGroup manual defaultIndex={0}>
               <TabList
                 className={"flex flex-row justify-start items-center gap-5"}
@@ -74,6 +74,9 @@ export default function Page() {
             </TabGroup>
           </div>
           <div className="flex-1 w-full flex flex-col items-start  ">
+            <div className="text-lg font-bold mb-3">
+              Leave your message｜留言
+            </div>
             <form
               className="w-full"
               name="contact"
@@ -83,7 +86,7 @@ export default function Page() {
             >
               <input type="hidden" name="bot-field" />
               <div className="flex flex-col mb-5">
-                <label className="text-lg font-medium mb-2" htmlFor="name">
+                <label className="text-base font-bold mb-2" htmlFor="name">
                   Name
                 </label>
                 <input
@@ -95,7 +98,7 @@ export default function Page() {
                 />
               </div>
               <div className="flex flex-col mb-5">
-                <label className="text-lg font-medium  mb-2" htmlFor="email">
+                <label className="text-base font-bold  mb-2" htmlFor="email">
                   Email
                 </label>
                 <input
@@ -107,7 +110,7 @@ export default function Page() {
                 />
               </div>
               <div className="flex flex-col mb-5">
-                <label className="text-lg font-medium  mb-2" htmlFor="message">
+                <label className="text-base font-bold  mb-2" htmlFor="message">
                   Message
                 </label>
                 <textarea
