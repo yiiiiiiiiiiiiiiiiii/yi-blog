@@ -1,4 +1,4 @@
-export default function IconEmailOutline(props: React.SVGProps<SVGSVGElement>) {
+export default function EmailOutline(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"

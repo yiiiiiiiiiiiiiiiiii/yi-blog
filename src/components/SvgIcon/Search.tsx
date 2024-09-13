@@ -1,4 +1,4 @@
-export default function IconInputSearch(props: React.SVGProps<SVGSVGElement>) {
+export default function Search(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       fill="none"

@@ -1,4 +1,4 @@
-export default function IconSun(props: React.SVGProps<SVGSVGElement>) {
+export default function Sun(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       fill="none"

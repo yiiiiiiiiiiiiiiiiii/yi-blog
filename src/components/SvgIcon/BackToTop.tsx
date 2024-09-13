@@ -1,4 +1,4 @@
-export default function IconBackToTop(props: React.SVGProps<SVGSVGElement>) {
+export default function BackToTop(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 1024 1024"

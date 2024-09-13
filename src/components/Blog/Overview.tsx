@@ -1,5 +1,4 @@
 import Link from "next/link";
-import dayjs from "dayjs";
 
 interface IOverviewProps {
   id: number;

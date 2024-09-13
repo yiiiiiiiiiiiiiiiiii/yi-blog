@@ -1,7 +1,5 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-
 import sendMessage from "@/lib/actions/sendMessage";
-
 import IconWechat from "@/components/SvgIcon/Wechat";
 import IconEmail from "@/components/SvgIcon/Email";
 import IconGithub from "@/components/SvgIcon/Github";
@@ -16,12 +14,10 @@ export default function Page() {
           </div>
           <div className="">
             <div className="mb-3">
-              You can contact me through the following contact information or
-              leave your message
+              You can contact me through the following contact information, or
+              leave a message
             </div>
-            <div className="">
-              可以通过以下的联系方式联系我，或者留下你的信息
-            </div>
+            <div className="">可以通过以下的联系方式联系我，或者留言</div>
           </div>
         </div>
         <div className="flex flex-col lg:flex-row justify-between items-start gap-5">
@@ -79,15 +75,7 @@ export default function Page() {
             <div className="text-lg font-bold mb-3">
               Leave your message｜留言
             </div>
-            <form
-              className="w-full"
-              name="contact"
-              method="post"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
-              action={sendMessage}
-            >
-              <input type="hidden" name="bot-field" />
+            <form className="w-full" method="post" action={sendMessage}>
               <div className="flex flex-col mb-5">
                 <label className="text-base font-bold mb-2" htmlFor="name">
                   Name
@@ -98,6 +86,7 @@ export default function Page() {
                   id="name"
                   className="border-2 border-gray-300 px-2 py-1 w-full"
                   required
+                  maxLength={40}
                 />
               </div>
               <div className="flex flex-col mb-5">
@@ -110,6 +99,7 @@ export default function Page() {
                   id="email"
                   className="border-2 border-gray-300 px-2 py-1 w-full"
                   required
+                  maxLength={60}
                 />
               </div>
               <div className="flex flex-col mb-5">
@@ -121,13 +111,14 @@ export default function Page() {
                   id="message"
                   className="border-2 border-gray-300 px-2 py-1 w-full h-40"
                   required
+                  maxLength={1000}
                 ></textarea>
               </div>
               <button
                 type="submit"
                 className="w-full text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4"
               >
-                Send
+                Send ｜ 留言
               </button>
             </form>
           </div>

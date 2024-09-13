@@ -1,4 +1,4 @@
-export default function IconMoon(props: React.SVGProps<SVGSVGElement>) {
+export default function Moon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       fill="none"

@@ -1,4 +1,4 @@
-export default function IconMenu(props: React.SVGProps<SVGSVGElement>) {
+export default function Menu(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       fill="none"

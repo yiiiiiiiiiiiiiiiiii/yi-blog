@@ -1,4 +1,4 @@
-export default function IconGithubLine(props: React.SVGProps<SVGSVGElement>) {
+export default function GithubLine(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       fill="none"

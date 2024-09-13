@@ -1,4 +1,4 @@
-import IconGithubLine from "../SvgIcon/GithubLine";
+import IconGithubLine from "@/components/SvgIcon/GithubLine";
 
 export default function Github() {
   return (

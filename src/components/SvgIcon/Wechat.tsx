@@ -1,4 +1,4 @@
-export default function IconWechat(props: React.SVGProps<SVGSVGElement>) {
+export default function Wechat(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 1024 1024"

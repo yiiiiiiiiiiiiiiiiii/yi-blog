@@ -1,4 +1,4 @@
-export default function IconBxlGithub(props: React.SVGProps<SVGSVGElement>) {
+export default function Github(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       viewBox="0 0 24 24"
