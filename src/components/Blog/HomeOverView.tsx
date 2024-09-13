@@ -8,7 +8,7 @@ export default async function HomeOverView({
   return (
     <div className="mb-24">
       <div className="w-full mx-auto mb-10 text-center font-bold">
-        Top blog | 置顶博客
+        Top blogs | 置顶博客
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 mb-32 gap-x-10 gap-y-10">
         {blogs?.map((blog, ndx) => {

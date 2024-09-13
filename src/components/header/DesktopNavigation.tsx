@@ -11,7 +11,7 @@ export default function DesktopNavigation(
     <nav {...props}>
       <ul className="flex flex-nowrap rounded-md text-base">
         <li className="">
-          <NavItem href="/blog">Blog ｜ 博客</NavItem>
+          <NavItem href="/blog">Blogs ｜ 博客</NavItem>
         </li>
         <li className="">
           <NavItem href="/about">About ｜ 关于</NavItem>

@@ -16,7 +16,7 @@ export default async function Page({ params }: { params: { id: string } }) {
     <>
       <Link
         href={"/blog"}
-        className="flex text-blue-500 justify-start items-center mb-6 no-underline italic "
+        className="flex text-blue-500 justify-start items-center mb-6 no-underline text-sm "
       >
         <IconArrowBack className="w-4 h-4 mr-2" />
         回到文章列表｜Back to blog list

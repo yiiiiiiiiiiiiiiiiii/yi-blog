@@ -43,7 +43,7 @@ export default function Search() {
                   type="text"
                   id="search"
                   className="block w-full py-2 px-4 mt-1 text-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500 text-black"
-                  placeholder="Search blog | 查找博客"
+                  placeholder="Search blogs | 查找博客"
                 />
               </div>
             </form>
