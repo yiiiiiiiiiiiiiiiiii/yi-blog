@@ -15,16 +15,19 @@ export default function Overview({
   createAt,
 }: IOverviewProps) {
   return (
-    <div className="w-full break-after-column mb-10 border-b-2 border-b-black dark:border-b-white">
-      <Link href={`/blog/${id}`}>
-        <div className="text-xl font-bold mb-2 text-blue-500">{title}</div>
-        <div className="mb-3">
-          <div className="text-sm font-normal italic leading-6">
-            创建时间：{createAt.toDateString()}
-          </div>
+    <div className="grid grid-cols-10 lg:grid-cols-12 mb-10">
+      <div className="col-span-10 lg:col-span-2">
+        <div className="text-sm font-normal mb-3 lg:pt-6 leading-6">
+          {createAt.toDateString()}
         </div>
-        <div className="text-base mb-5 line-clamp-3 leading-7">{content}</div>
-      </Link>
+      </div>
+      <div className="col-span-10 lg:p-6 ">
+        <div className="text-lg font-black mb-3">{title}</div>
+        <div className="text-base mb-3 line-clamp-3">{content}</div>
+        <div className="text-blue-500 text-sm font-normal leading-6 cursor-pointer hover:underline">
+          Read more | 阅读文章
+        </div>
+      </div>
     </div>
   );
 }

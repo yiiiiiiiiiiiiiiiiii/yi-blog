@@ -6,7 +6,7 @@ export default function Introduction() {
       <div className="text-2xl font-bold mb-12">
         <div className="text-5xl text-blue-500 font-black mb-6">y18i</div>
         <div className="text-3xl font-bold mb-2">A Front End Developer</div>
-        <div className="mt-3">前端开发者，热爱编程，热爱开源，热爱分享。</div>
+        <div className="mt-3">前端，构建人与万物互联的世界</div>
       </div>
       <div className="dark:text-gray-400 text-gray-700 mb-12 max-w-4xl">
         <div className="mb-5">

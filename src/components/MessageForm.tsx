@@ -3,10 +3,11 @@
 import { useActionState } from "react";
 import IconCheck from "@/components/SvgIcon/Check";
 import IconLoading from "@/components/SvgIcon/Loading";
+import IconSubmitError from "@/components/SvgIcon/SubmitError";
 import sendMessage from "@/lib/actions/sendMessage";
 
 const initialState = {
-  error: null,
+  success: undefined,
   message: "",
 };
 
@@ -60,13 +61,28 @@ export default function MessageForm() {
             maxLength={1000}
           ></textarea>
         </div>
-        <div className="h-6 text-sm text-emerald-500 mb-2 ">
-          {isPending && <IconLoading className="w-4 h-4 mr-1 animate-spin" />}
-          {response.message && !isPending && (
-            <div className="flex flex-row justify-start items-center">
-              <IconCheck className="w-4 h-4 mr-1" />
-              {response.message}
-            </div>
+        <div
+          className={`h-6 text-sm  mb-2 ${
+            !!response.success ? "text-emerald-500" : "text-red-500"
+          }`}
+        >
+          {isPending && (
+            <IconLoading className="w-4 h-4 mr-1 animate-spin text-blue-500" />
+          )}
+          {!isPending && response.success !== undefined && (
+            <>
+              {!response.success ? (
+                <div className="flex flex-row justify-start items-center">
+                  <IconSubmitError className="w-4 h-4 mr-1" />
+                  {response.message}
+                </div>
+              ) : (
+                <div className="flex flex-row justify-start items-center">
+                  <IconCheck className="w-4 h-4 mr-1" />
+                  {response.message}
+                </div>
+              )}
+            </>
           )}
         </div>
         <button

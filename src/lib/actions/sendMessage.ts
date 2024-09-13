@@ -5,8 +5,8 @@ import transporter from "../mailer";
 export default async function sendMessage(
   previousState: any,
   formData: FormData
-): Promise<{ error: Error | null; message: string }> {
-  return new Promise((resolve, reject) => {
+): Promise<{ success: boolean | undefined; message: string }> {
+  return new Promise((resolve) => {
     transporter.sendMail(
       {
         from: process.env.MAIL_ADDRESS,
@@ -18,14 +18,14 @@ export default async function sendMessage(
       },
       (error, info) => {
         if (error) {
-          console.error(error, info);
-          reject({
-            error: error,
+          // console.error(error, info);
+          resolve({
+            success: false,
             message: "Failed to send message | 发送失败",
           });
         } else {
           resolve({
-            error: null,
+            success: true,
             message: "Message sent successfully | 发送成功",
           });
         }

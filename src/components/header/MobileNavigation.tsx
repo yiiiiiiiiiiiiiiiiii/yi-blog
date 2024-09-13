@@ -27,7 +27,7 @@ export default function MobileNavigation() {
         <MenuItem>
           {({ close }) => (
             <LinkItem href="/blog" onClick={close}>
-              Blog ｜ 随记
+              Blog ｜ 博客
             </LinkItem>
           )}
         </MenuItem>
