@@ -1,7 +1,11 @@
 "use server";
+
 import transporter from "../mailer";
 
-export default async function sendMessage(formData: FormData) {
+export default async function sendMessage(
+  previousState: any,
+  formData: FormData
+): Promise<{ error: Error | null; message: string }> {
   return new Promise((resolve, reject) => {
     transporter.sendMail(
       {
@@ -13,11 +17,17 @@ export default async function sendMessage(formData: FormData) {
         )}\n${formData.get("message")}`,
       },
       (error, info) => {
-        console.log(error, info);
         if (error) {
-          reject(error);
+          console.error(error, info);
+          reject({
+            error: error,
+            message: "Failed to send message | 发送失败",
+          });
         } else {
-          resolve(info.response);
+          resolve({
+            error: null,
+            message: "Message sent successfully | 发送成功",
+          });
         }
       }
     );

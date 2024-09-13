@@ -35,14 +35,14 @@ export default function Search() {
         <div className="flex flex-col min-h-full items-center justify-start lg:mt-24">
           <DialogPanel
             transition
-            className="w-full max-w-2xl shadow-lg p-6 bg-white border"
+            className="w-full max-w-2xl shadow-lg p-6 bg-white dark:bg-black border dark:border-black/50"
           >
             <form>
               <div>
                 <input
                   type="text"
                   id="search"
-                  className="block w-full py-2 px-4 mt-1 text-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                  className="block w-full py-2 px-4 mt-1 text-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500 text-black"
                   placeholder="Search blog | 查找博客"
                 />
               </div>

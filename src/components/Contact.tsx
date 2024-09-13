@@ -8,13 +8,11 @@ export default function Contact() {
       </div>
       <div className="dark:text-gray-400 text-gray-700 mb-12">
         <div className="">
-          I’m Spencer, a software designer and entrepreneur based in New York
-          City. I’m the founder and CEO of Planetaria, where we develop
-          technologies that empower regular people to explore space on their own
-          terms.
+          Any question is welcome to contact me, any communication makes my mind
+          wider
         </div>
         <div className="mt-3">
-          哈喽，我是Yi，一个前端开发专家,这个个人博客网站就算是所有我学习到东西的总结和实践。
+          任何问题都欢迎联系我，任何交流都让我的思维更宽广
         </div>
       </div>
       <MajorButton href="/contact">Contact Me 联系我</MajorButton>

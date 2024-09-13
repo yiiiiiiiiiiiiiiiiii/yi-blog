@@ -1,8 +1,8 @@
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import sendMessage from "@/lib/actions/sendMessage";
 import IconWechat from "@/components/SvgIcon/Wechat";
 import IconEmail from "@/components/SvgIcon/Email";
 import IconGithub from "@/components/SvgIcon/Github";
+import MessageForm from "@/components/MessageForm";
 
 export default function Page() {
   return (
@@ -71,57 +71,7 @@ export default function Page() {
               </TabPanels>
             </TabGroup>
           </div>
-          <div className="flex-1 w-full flex flex-col items-start  ">
-            <div className="text-lg font-bold mb-3">
-              Leave your message｜留言
-            </div>
-            <form className="w-full" method="post" action={sendMessage}>
-              <div className="flex flex-col mb-5">
-                <label className="text-base font-bold mb-2" htmlFor="name">
-                  Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  className="border-2 border-gray-300 px-2 py-1 w-full"
-                  required
-                  maxLength={40}
-                />
-              </div>
-              <div className="flex flex-col mb-5">
-                <label className="text-base font-bold  mb-2" htmlFor="email">
-                  Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  className="border-2 border-gray-300 px-2 py-1 w-full"
-                  required
-                  maxLength={60}
-                />
-              </div>
-              <div className="flex flex-col mb-5">
-                <label className="text-base font-bold  mb-2" htmlFor="message">
-                  Message
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  className="border-2 border-gray-300 px-2 py-1 w-full h-40"
-                  required
-                  maxLength={1000}
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4"
-              >
-                Send ｜ 留言
-              </button>
-            </form>
-          </div>
+          <MessageForm />
         </div>
       </div>
     </div>

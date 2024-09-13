@@ -6,17 +6,15 @@ export default function Introduction() {
       <div className="text-2xl font-bold mb-12">
         <div className="text-5xl text-blue-500 font-black mb-6">y18i</div>
         <div className="text-3xl font-bold mb-2">A Front End Developer</div>
-        <div className="mt-3">前端开发专家</div>
+        <div className="mt-3">前端开发者，热爱编程，热爱开源，热爱分享。</div>
       </div>
       <div className="dark:text-gray-400 text-gray-700 mb-12 max-w-4xl">
         <div className="mb-5">
-          I’m Spencer, a software designer and entrepreneur based in New York
-          City. I’m the founder and CEO of Planetaria, where we develop
-          technologies that empower regular people to explore space on their own
-          terms.
+          Hi, I'm Yi, a front-end developer, and this site is a summary and
+          practice of everything I've learned.
         </div>
         <div className="">
-          哈喽，我是Yi，一个前端开发专家，这个个人博客网站就算是所有我学习到东西的总结和实践。
+          嗨，我是Yi，一个前端开发，这个网站就算是所有我学习到东西的总结和实践。
         </div>
       </div>
       <MajorButton href="/about">About Me 关于我</MajorButton>
