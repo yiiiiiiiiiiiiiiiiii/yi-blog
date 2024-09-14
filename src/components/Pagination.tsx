@@ -54,7 +54,7 @@ function PaginationLink({
       aria-current={isActive ? "page" : undefined}
       className={clsx(
         "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50",
-        "h-10 px-4 py-2",
+        "h-10 px-2 py-2",
         isActive
           ? "text-blue-500 underline"
           : "hover:text-blue-500/90  hover:no-underline",

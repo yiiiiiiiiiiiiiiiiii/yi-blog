@@ -12,6 +12,7 @@ export default async function Page({
   const page = parseInt(stringPage);
 
   const total = await prisma.blog.count();
+  // const total = 100;
   const totalPages = Math.ceil(total / limit);
 
   const skip = (page - 1) * limit;
