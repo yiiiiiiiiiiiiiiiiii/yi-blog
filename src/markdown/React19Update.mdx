@@ -1,0 +1,28 @@
+# React 19 RC（测试数据）
+
+于 2024 年 4 月 25 日发布，为开发者带来了众多新特性和改进。其中一些重要变化包括：
+
+1. **Actions**：新版本引入了“ACTIONS”概念，通过支持异步函数来自动处理数据提交、待定状态、错误和乐观更新。这使得在处理用户输入时，状态管理变得更加简化和高效。
+
+2. **新 Hooks**：React 19 增加了多个新 hooks，包括 `useActionState`、`useFormStatus` 和 `useOptimistic` ，用于简化表单管理和数据更新操作。使用这些 hooks，开发者可以通过更少的代码管理更复杂的状态和异步请求。
+
+3. **use API**：新引入的 `use` API 允许在渲染中读取 Promise，React 会在 Promise 解析完成之前挂起渲染。这为数据获取操作提供了一种更简洁的方式。
+
+4. **服务器组件**：React 19 支持服务器组件，可以在构建时或每次请求时进行渲染，从而提高性能和用户体验。
+
+5. **ref 作为 props**：现在可以将 `ref` 作为函数组件的属性传递，这简化了对 DOM 元素的引用管理，减少了对 `forwardRef` 的需要。
+
+6. **改进的错误处理**：React 19 改进了错误报告机制，减少了重复的错误日志，提高了开发过程中的可调试性。
+
+7. **文档元数据支持**：新版本支持在组件中直接渲染文档元数据标签，如 `<title>` 和 `<meta>`，自动提升至文档的 `<head>` 部分，提高了 SEO 效率。
+
+8. **样式表支持**：提供对外部及内联样式表的改进集成，使得样式的管理和应用更加直观。
+
+这些改进和新特性旨在提升开发效率、简化代码结构，并提供更好的用户体验。开发者可以在 React 19 RC 升级指南中找到详细的升级步骤和说明，以便顺利过渡到新版本。
+
+**Reference**  
+[1][React 19 RC – React](https://react.dev/blog/2024/04/25/react-19)  
+[2][React 19 RC Upgrade Guide – React](https://react.dev/blog/2024/04/25/react-19-upgrade-guide)  
+[3][React 19 RC – React 中文文档 | zh-hans.react.dev](https://zh-hans.react.dev/blog/2024/04/25/react-19)  
+[4][React Blog – React](https://react.dev/blog)  
+[5][React 19: A Game-Changer for Modern Web Development](https://dev.to/vyan/react-19-a-game-changer-for-modern-web-development-1bih)

@@ -1,6 +1,9 @@
 import Goback from "@/components/Goback";
 import prisma from "@/lib/db";
-import Welcome from "@/markdown/welcome.mdx";
+import Scheduler from "@/markdown/Scheduler.mdx";
+import React19Update from "@/markdown/React19Update.mdx";
+import ReactHooks from "@/markdown/ReactHooks.mdx";
+import NEXT from "@/markdown/NEXT.mdx";
 
 export default async function Page({ params }: { params: { id: string } }) {
   const blog = await prisma.blog.findUnique({
@@ -14,9 +17,10 @@ export default async function Page({ params }: { params: { id: string } }) {
   return (
     <>
       <Goback />
-      <div className="text-3xl text-black font-bold mb-4">{blog.title}</div>
-      <div className="text-sm italic mb-10">{blog.createAt.toDateString()}</div>
-      <Welcome />
+      <NEXT />
+      {/* <Scheduler /> */}
+      {/* <ReactHooks /> */}
+      {/* <React19Update /> */}
     </>
   );
 }
