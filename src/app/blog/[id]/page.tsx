@@ -1,5 +1,4 @@
-import Link from "next/link";
-import IconArrowBack from "@/components/SvgIcon/Back";
+import Goback from "@/components/Goback";
 import prisma from "@/lib/db";
 import Welcome from "@/markdown/welcome.mdx";
 
@@ -14,13 +13,7 @@ export default async function Page({ params }: { params: { id: string } }) {
 
   return (
     <>
-      <Link
-        href={"/blog"}
-        className="flex text-blue-500 justify-start items-center mb-6 no-underline text-sm "
-      >
-        <IconArrowBack className="w-4 h-4 mr-2" />
-        回到文章列表｜Back to blog list
-      </Link>
+      <Goback />
       <div className="text-3xl text-black font-bold mb-4">{blog.title}</div>
       <div className="text-sm italic mb-10">{blog.createAt.toDateString()}</div>
       <Welcome />

@@ -1,51 +1,125 @@
-"use client";
+import * as React from "react";
+import ChevronLeft from "./SvgIcon/ChevronLeft";
+import ChevronRight from "./SvgIcon/ChevronRight";
+import MoreHorizontal from "./SvgIcon/MoreHorizontal";
 
-import { useRouter, usePathname } from "next/navigation";
+import clsx from "clsx";
 
-export default function Pagination({
-  page,
-  limit,
-  total,
-}: {
-  page: number;
-  limit: number;
-  total: number;
-}) {
-  const router = useRouter();
-  const pathname = usePathname();
-  const onPageChange = (page: number) => {
-    router.replace(pathname + `?page=${page}&limit=${limit}`);
-  };
-
-  const pages = Array.from({ length: total }, (_, i) => i + 1);
-
+function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (
-    <div className="flex justify-center space-x-2">
-      <button
-        onClick={() => onPageChange(page - 1)}
-        disabled={page === 1}
-        className="px-4 py-2 bg-blue-500 text-white  disabled:bg-gray-300 disabled:cursor-not-allowed"
-      >
-        Previous
-      </button>
-      {pages.map((page) => (
-        <button
-          key={page}
-          onClick={() => onPageChange(page)}
-          className={`px-4 py-2 ${
-            page === page ? "bg-blue-700 text-white" : "bg-blue-500 text-white"
-          } `}
-        >
-          {page}
-        </button>
-      ))}
-      <button
-        onClick={() => onPageChange(page + 1)}
-        disabled={page === total}
-        className="px-4 py-2 bg-blue-500 text-white  disabled:bg-gray-300 disabled:cursor-not-allowed"
-      >
-        Next
-      </button>
-    </div>
+    <nav
+      role="navigation"
+      aria-label="pagination"
+      className={clsx("mx-auto flex w-full justify-center", className)}
+      {...props}
+    />
   );
 }
+
+function PaginationContent({
+  className,
+  ref,
+  ...props
+}: React.HTMLAttributes<HTMLUListElement> & {
+  ref?: React.Ref<HTMLUListElement>;
+}) {
+  return (
+    <ul
+      ref={ref}
+      className={clsx("flex flex-row items-center gap-1", className)}
+      {...props}
+    />
+  );
+}
+
+function PaginationItem({
+  className,
+  ref,
+  ...props
+}: React.HTMLAttributes<HTMLLIElement> & { ref?: React.Ref<HTMLLIElement> }) {
+  return <li ref={ref} className={clsx("", className)} {...props} />;
+}
+
+type PaginationLinkProps = {
+  isActive?: boolean;
+} & React.ComponentProps<"a">;
+
+function PaginationLink({
+  className,
+  isActive,
+  ...props
+}: PaginationLinkProps) {
+  return (
+    <a
+      aria-current={isActive ? "page" : undefined}
+      className={clsx(
+        "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50",
+        "h-10 px-4 py-2",
+        isActive
+          ? "text-blue-500 underline"
+          : "hover:text-blue-500/90  hover:no-underline",
+        className
+      )}
+      {...props}
+    />
+  );
+}
+
+function PaginationPrevious({
+  className,
+  ...props
+}: React.ComponentProps<typeof PaginationLink>) {
+  return (
+    <PaginationLink
+      aria-label="Go to previous page"
+      className={clsx("gap-1 pl-2.5", className)}
+      {...props}
+    >
+      <ChevronLeft className="h-4 w-4" />
+      <span>Previous</span>
+    </PaginationLink>
+  );
+}
+PaginationPrevious.displayName = "PaginationPrevious";
+
+function PaginationNext({
+  className,
+  ...props
+}: React.ComponentProps<typeof PaginationLink>) {
+  return (
+    <PaginationLink
+      aria-label="Go to next page"
+      className={clsx("gap-1 pr-2.5", className)}
+      {...props}
+    >
+      <span>Next</span>
+      <ChevronRight className="h-4 w-4" />
+    </PaginationLink>
+  );
+}
+
+function PaginationEllipsis({
+  className,
+  ...props
+}: React.ComponentProps<"span">) {
+  return (
+    <span
+      aria-hidden
+      className={clsx("flex h-9 w-9 items-center justify-center", className)}
+      {...props}
+    >
+      <MoreHorizontal className="h-4 w-4" />
+      <span className="sr-only">More pages</span>
+    </span>
+  );
+}
+
+export {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+};

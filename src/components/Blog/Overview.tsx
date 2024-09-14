@@ -17,7 +17,7 @@ export default function Overview({
   return (
     <div className="grid grid-cols-10 lg:grid-cols-12 mb-10">
       <div className="col-span-10 lg:col-span-2">
-        <div className="text-sm font-normal mb-3 lg:pt-6 leading-6">
+        <div className="text-sm font-normal mb-3 lg:pt-6 leading-6 text-gray-500">
           {createAt.toDateString()}
         </div>
       </div>

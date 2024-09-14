@@ -1,16 +1,20 @@
 import prisma from "@/lib/db";
 import Overview from "@/components/Blog/Overview";
-import Pagination from "@/components/Pagination";
+import BlogPostsPagination from "@/components/BlogPostsPagination";
 
 export default async function Page({
   searchParams,
 }: {
-  searchParams: { page: number; limit: number };
+  searchParams: { page: string };
 }) {
-  const { page = 1, limit = 10 } = searchParams;
-  const skip = (page - 1) * limit;
+  const limit = 3;
+  const { page: stringPage = "1" } = searchParams;
+  const page = parseInt(stringPage);
 
   const total = await prisma.blog.count();
+  const totalPages = Math.ceil(total / limit);
+
+  const skip = (page - 1) * limit;
   const blogs = await prisma.blog.findMany({
     skip,
     take: limit,
@@ -19,7 +23,12 @@ export default async function Page({
   return (
     <div>
       <div className="text-3xl font-bold mb-10">Blogs 博客</div>
-      <div className="mb-10">博客的内容是按照时间先后排序的</div>
+      <div className="mb-10">
+        <div className="mb-3">
+          The content of the blog is sorted in chronological order
+        </div>
+        <div>博客的内容是按照时间先后排序的</div>
+      </div>
       <div className="">
         {blogs.map((blog, ndx) => {
           return (
@@ -29,7 +38,16 @@ export default async function Page({
           );
         })}
       </div>
-      <Pagination total={total} page={page} limit={limit} />
+      {totalPages > 1 && (
+        <BlogPostsPagination
+          pagination={{
+            page: page,
+            totalPages,
+            nextPage: page < totalPages ? page + 1 : null,
+            prevPage: page > 1 ? page - 1 : null,
+          }}
+        />
+      )}
     </div>
   );
 }
