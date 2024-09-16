@@ -23,7 +23,7 @@ export default function Overview({
       </div>
 
       <div className="col-span-10 lg:p-6 ">
-        <Link href={`/blog/${id}`}>
+        <Link href={`/articles/${id}`}>
           <div className="text-lg font-black mb-3">{title}</div>
           <div className="text-base mb-3 line-clamp-3">{content}</div>
           <div className="text-blue-500 text-sm font-normal leading-6 cursor-pointer">

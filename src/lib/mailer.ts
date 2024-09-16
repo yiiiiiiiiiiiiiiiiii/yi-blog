@@ -5,8 +5,8 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true, // use TLS
   auth: {
-    user: process.env.MAIL_ADDRESS,
-    pass: process.env.MAIL_USER_PASSWORD,
+    user: process.env.PROXY_PUB_MAIL,
+    pass: process.env.PROXY_PUB_MAIL_PASSWORD,
   },
 });
 

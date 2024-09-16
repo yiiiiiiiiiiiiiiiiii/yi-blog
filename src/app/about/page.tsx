@@ -14,10 +14,10 @@ export default function Page() {
           <div>
             <div className="mb-1">
               Mainly to precipitate the learning content, while feeling that
-              having your own blog is a cool thing
+              having your own website is a cool thing
             </div>
             <div>
-              主要是为了沉淀学习的内容，同时感觉有一个自己的博客是一件很酷的事情。
+              主要是为了沉淀学习的内容，同时感觉有一个自己的网站是一件很酷的事情。
             </div>
           </div>
         </div>

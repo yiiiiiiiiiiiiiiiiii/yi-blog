@@ -6,11 +6,11 @@ import {
   PaginationLink,
   PaginationNext,
   PaginationPrevious,
-} from "./Pagination";
+} from "../Pagination";
 
-export default function BlogPostsPagination({
+export default function ArticlesPagination({
   pagination,
-  basePath = "/blog?page=",
+  basePath = "/articles?page=",
   numSiblingPages = 1,
 }: {
   basePath?: string;

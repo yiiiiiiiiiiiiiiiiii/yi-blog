@@ -6,21 +6,21 @@ import ReactHooks from "@/markdown/ReactHooks.mdx";
 import NEXT from "@/markdown/NEXT.mdx";
 
 export default async function Page({ params }: { params: { id: string } }) {
-  const blog = await prisma.blog.findUnique({
+  const article = await prisma.article.findUnique({
     where: { id: parseInt(params.id) },
   });
 
-  if (!blog) {
+  if (!article) {
     return <div>Not found</div>;
   }
 
   return (
     <>
       <Goback />
-      <NEXT />
-      {/* <Scheduler /> */}
+      <Scheduler />
       {/* <ReactHooks /> */}
       {/* <React19Update /> */}
+      {/* <NEXT /> */}
     </>
   );
 }
