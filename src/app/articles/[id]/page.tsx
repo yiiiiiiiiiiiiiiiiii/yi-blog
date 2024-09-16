@@ -21,7 +21,7 @@ export default async function RemoteMdxPage({
   return (
     <>
       <Goback />
-      <MDXRemote source={markdown} />;
+      <MDXRemote source={markdown} />
     </>
   );
 }
