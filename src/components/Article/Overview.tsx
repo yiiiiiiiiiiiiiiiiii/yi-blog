@@ -3,7 +3,7 @@ import Link from "next/link";
 interface IOverviewProps {
   id: number;
   title: string;
-  content: string | null;
+  describe: string;
   createAt: Date;
   updatedAt: Date;
 }
@@ -11,7 +11,7 @@ interface IOverviewProps {
 export default function Overview({
   id,
   title,
-  content,
+  describe,
   createAt,
 }: IOverviewProps) {
   return (
@@ -25,7 +25,7 @@ export default function Overview({
       <div className="col-span-10 lg:p-6 ">
         <Link href={`/articles/${id}`}>
           <div className="text-lg font-black mb-3">{title}</div>
-          <div className="text-base mb-3 line-clamp-3">{content}</div>
+          <div className="text-base mb-3 line-clamp-3">{describe}</div>
           <div className="text-blue-500 text-sm font-normal leading-6 cursor-pointer">
             Read more | 阅读文章
           </div>

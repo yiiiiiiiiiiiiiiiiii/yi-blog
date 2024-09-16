@@ -14,27 +14,27 @@ async function main() {
   const updateMany = await prisma.article.createMany({
     data: [
       {
+        title: "First Article",
+        describe: "First Article",
+        content: "http://localhost:3000/markdown/NEXT.mdx",
+        authorId: yi.id,
+      },
+      {
         title: "Second Article",
         describe: "Second Article",
-        content: "Second Article",
+        content: "http://localhost:3000/markdown/React19Update.mdx",
         authorId: yi.id,
       },
       {
         title: "Third Article",
         describe: "Third Article",
-        content: "Third Article",
+        content: "http://localhost:3000/markdown/ReactHooks.mdx",
         authorId: yi.id,
       },
       {
         title: "Fourth Article",
         describe: "Fourth Article",
-        content: "Fourth Article",
-        authorId: yi.id,
-      },
-      {
-        title: "Fourth Article",
-        describe: "Fourth Article",
-        content: "Fourth Article",
+        content: "http://localhost:3000/markdown/Scheduler.mdx",
         authorId: yi.id,
       },
     ],
