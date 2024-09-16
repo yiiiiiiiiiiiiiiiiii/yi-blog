@@ -18,6 +18,7 @@ async function main() {
         describe: `React 19 RC 现已在 npm 上发布！\n在我们的 React 19 RC 升级指南中，我们分享了逐步的说明，帮助您将应用程序升级到 React 19。在这篇文章中，我们将概述 React 19 中的新特性，以及您如何采纳这些新特性。\nReact 19 中的新内容 React 19 的改进 如何升级 有关重大变化的列表，请参阅升级指南。`,
         content: "http://localhost:3000/markdown/React19Update.mdx",
         authorId: yi.id,
+        top: true,
       },
       {
         title: "React Hooks",
@@ -25,6 +26,7 @@ async function main() {
           "React Hooks 是 React 16.8 版本引入的新特性，旨在使函数组件具备状态管理和副作用处理的能力。要深入了解 React Hooks 的原理，我们需要从框架源码的角度来分析它的实现机制。",
         content: "http://localhost:3000/markdown/ReactHooks.mdx",
         authorId: yi.id,
+        top: true,
       },
       {
         title: "React Scheduler",

@@ -7,7 +7,9 @@ import prisma from "@/lib/db";
 
 export default async function Page() {
   const articles = await prisma.article.findMany({
-    take: 2,
+    where: {
+      top: true,
+    },
   });
 
   return (

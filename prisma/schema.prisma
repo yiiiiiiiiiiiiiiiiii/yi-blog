@@ -2,7 +2,8 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client-js"
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
 }
 
 datasource db {
@@ -18,10 +19,12 @@ model User {
 }
 
 model Article {
-  id       Int     @id @default(autoincrement())
-  title    String  @unique
+  id       Int    @id @default(autoincrement())
+  title    String @unique
   describe String
-  content  String?
+  content  String
+
+  top Boolean @default(false)
 
   author   User @relation(fields: [authorId], references: [id])
   authorId Int

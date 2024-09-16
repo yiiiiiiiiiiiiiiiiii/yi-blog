@@ -1,16 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import {
-  Description,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-} from "@headlessui/react";
+import Link from "next/link";
+import { useDebounceFn } from "ahooks";
+import { Dialog, DialogPanel } from "@headlessui/react";
 import IconSearch from "@/components/SvgIcon/Search";
+import queryArticle from "@/lib/actions/queryArticle";
 
 export default function Search() {
   const [isOpen, setIsOpen] = useState(false);
+  const [keyword, setKeyword] = useState("");
+  const [articles, setArticles] = useState<
+    Awaited<ReturnType<typeof queryArticle>>
+  >([]);
+
+  const runQuery = useDebounceFn(
+    async (keyword: string) => {
+      const result = await queryArticle(keyword);
+
+      console.log(result);
+      setArticles(result);
+    },
+    { wait: 500 }
+  );
 
   function open() {
     setIsOpen(true);
@@ -32,33 +44,36 @@ export default function Search() {
         className="fixed inset-0 flex w-screen items-center justify-center bg-white/30 dark:bg-black/30 p-4 transition duration-300 ease-out data-[closed]:opacity-0 z-10 focus:outline-none backdrop-blur-sm "
         onClose={close}
       >
-        <div className="flex flex-col min-h-full items-center justify-start lg:mt-24">
+        <div className="w-full max-w-2xl flex flex-col min-h-full items-center justify-start lg:mt-24">
           <DialogPanel
             transition
             className="w-full max-w-2xl shadow-lg p-6 bg-white dark:bg-black border dark:border-black/50"
           >
-            <form>
-              <div>
-                <input
-                  type="text"
-                  id="search"
-                  className="block w-full py-2 px-4 mt-1 text-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500 text-black"
-                  placeholder="Search article | 查找文章"
-                />
-              </div>
-            </form>
-            <p className="mt-5 ">
-              Your payment has been successfully submitted. We’ve sent you an
-              email with all of the details of your order.
-            </p>
-            <p className="mt-5 ">
-              Your payment has been successfully submitted. We’ve sent you an
-              email with all of the details of your order.
-            </p>
-            <p className="mt-5 ">
-              Your payment has been successfully submitted. We’ve sent you an
-              email with all of the details of your order.
-            </p>
+            <div className="w-full">
+              <input
+                type="text"
+                id="search"
+                className="block w-full py-2 px-2 mt-1 text-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500 text-black"
+                placeholder="Search article | 查找文章"
+                onChange={(e) => runQuery.run(e.target.value)}
+              />
+            </div>
+
+            {articles.map((article) => (
+              <Link
+                key={article.id}
+                href={`/articles/${article.id}`}
+                onClick={close}
+              >
+                <div
+                  key={article.id}
+                  className="py-4 border-b  border-black dark:border-white/50 last:border-none"
+                >
+                  <h2 className="font-bold">{article.title}</h2>
+                  <p className="mt-2 text-sm">{article.describe}</p>
+                </div>
+              </Link>
+            ))}
           </DialogPanel>
         </div>
       </Dialog>
