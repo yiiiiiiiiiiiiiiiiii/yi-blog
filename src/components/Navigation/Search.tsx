@@ -1,11 +1,8 @@
 "use client";
 
 import { Suspense, useState, useDeferredValue } from "react";
-import Link from "next/link";
-import { useDebounceFn } from "ahooks";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import IconSearch from "@/components/SvgIcon/Search";
-import queryArticle from "@/lib/actions/queryArticle";
 import SearchResults from "./SearchResults";
 
 export default function Search() {
@@ -13,26 +10,13 @@ export default function Search() {
   const [keyword, setKeyword] = useState("");
   const deferredKeyword = useDeferredValue(keyword);
 
-  const [articles, setArticles] = useState<
-    Awaited<ReturnType<typeof queryArticle>>
-  >([]);
-
-  const runQuery = useDebounceFn(
-    async (keyword: string) => {
-      const result = await queryArticle(keyword);
-
-      console.log(result);
-      setArticles(result);
-    },
-    { wait: 500 }
-  );
-
   function open() {
     setIsOpen(true);
   }
 
   function close() {
     setIsOpen(false);
+    setKeyword("");
   }
 
   return (
@@ -63,7 +47,13 @@ export default function Search() {
               />
             </div>
 
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense
+              fallback={
+                <div className="mt-4 text-sm font-medium">
+                  Loading... | 搜索中...
+                </div>
+              }
+            >
               <div
                 style={{
                   opacity: keyword !== deferredKeyword ? 0.5 : 1,
@@ -73,25 +63,9 @@ export default function Search() {
                       : "opacity 0s 0s linear",
                 }}
               >
-                <SearchResults keyword={deferredKeyword} />
+                <SearchResults keyword={deferredKeyword} close={close} />
               </div>
             </Suspense>
-
-            {/* {articles.map((article) => (
-              <Link
-                key={article.id}
-                href={`/articles/${article.id}`}
-                onClick={close}
-              >
-                <div
-                  key={article.id}
-                  className="py-4 border-b  border-black dark:border-white/50 last:border-none"
-                >
-                  <h2 className="font-bold">{article.title}</h2>
-                  <p className="mt-2 text-sm">{article.describe}</p>
-                </div>
-              </Link>
-            ))} */}
           </DialogPanel>
         </div>
       </Dialog>
