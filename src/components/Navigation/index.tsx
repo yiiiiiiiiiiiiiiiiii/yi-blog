@@ -5,7 +5,7 @@ import GithubLink from "./GithubLink";
 import IconSearch from "./Search";
 import MobileNavigation from "./MobileNavigation";
 
-export default function Header() {
+export default function Navigation() {
   return (
     <div className="container mx-auto">
       <div className="w-full py-5">

@@ -23,11 +23,12 @@
     "ahooks": "^3.8.1",
     "clsx": "^2.1.1",
     "cross-env": "^7.0.3",
-    "next": "^15.0.0-rc.0",
+    "next": "^14.2.7",
     "next-mdx-remote": "^5.0.0",
+    "next-themes": "^0.3.0",
     "nodemailer": "^6.9.15",
-    "react": "^19.0.0-rc-94e652d5-20240912",
-    "react-dom": "^19.0.0-rc-94e652d5-20240912"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.15",
@@ -36,7 +37,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "^15.0.0-rc.0",
+    "eslint-config-next": "^14.2.7",
     "postcss": "^8",
     "prisma": "^5.19.1",
     "tailwindcss": "^3.4.1",

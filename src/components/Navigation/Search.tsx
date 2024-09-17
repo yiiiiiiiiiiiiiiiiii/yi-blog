@@ -1,15 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState, useDeferredValue } from "react";
 import Link from "next/link";
 import { useDebounceFn } from "ahooks";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import IconSearch from "@/components/SvgIcon/Search";
 import queryArticle from "@/lib/actions/queryArticle";
+import SearchResults from "./SearchResults";
 
 export default function Search() {
   const [isOpen, setIsOpen] = useState(false);
   const [keyword, setKeyword] = useState("");
+  const deferredKeyword = useDeferredValue(keyword);
+
   const [articles, setArticles] = useState<
     Awaited<ReturnType<typeof queryArticle>>
   >([]);
@@ -53,13 +56,28 @@ export default function Search() {
               <input
                 type="text"
                 id="search"
-                className="block w-full py-2 px-2 mt-1 text-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500 text-black"
+                className="block w-full py-2 px-2 mt-1 text-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500 text-black dark:text-white"
                 placeholder="Search article | 查找文章"
-                onChange={(e) => runQuery.run(e.target.value)}
+                autoComplete="off"
+                onChange={(e) => setKeyword(e.target.value)}
               />
             </div>
 
-            {articles.map((article) => (
+            <Suspense fallback={<div>Loading...</div>}>
+              <div
+                style={{
+                  opacity: keyword !== deferredKeyword ? 0.5 : 1,
+                  transition:
+                    keyword !== deferredKeyword
+                      ? "opacity 0.2s 0.2s linear"
+                      : "opacity 0s 0s linear",
+                }}
+              >
+                <SearchResults keyword={deferredKeyword} />
+              </div>
+            </Suspense>
+
+            {/* {articles.map((article) => (
               <Link
                 key={article.id}
                 href={`/articles/${article.id}`}
@@ -73,7 +91,7 @@ export default function Search() {
                   <p className="mt-2 text-sm">{article.describe}</p>
                 </div>
               </Link>
-            ))}
+            ))} */}
           </DialogPanel>
         </div>
       </Dialog>

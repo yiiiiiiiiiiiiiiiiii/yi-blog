@@ -1,4 +1,5 @@
-import * as React from "react";
+import React from "react";
+import Link, { LinkProps } from "next/link";
 import ChevronLeft from "./SvgIcon/ChevronLeft";
 import ChevronRight from "./SvgIcon/ChevronRight";
 import MoreHorizontal from "./SvgIcon/MoreHorizontal";
@@ -42,17 +43,19 @@ function PaginationItem({
 
 type PaginationLinkProps = {
   isActive?: boolean;
-} & React.ComponentProps<"a">;
+  className?: string;
+} & LinkProps;
 
 function PaginationLink({
   className,
   isActive,
+  children,
   ...props
-}: PaginationLinkProps) {
+}: React.PropsWithChildren<PaginationLinkProps>) {
   return (
-    <a
-      aria-current={isActive ? "page" : undefined}
+    <Link
       className={clsx(
+        "un-underline",
         "inline-flex items-center justify-center whitespace-nowrap text-sm font-medium disabled:pointer-events-none disabled:opacity-50",
         "h-10 px-2 py-2",
         isActive
@@ -61,7 +64,9 @@ function PaginationLink({
         className
       )}
       {...props}
-    />
+    >
+      {children}
+    </Link>
   );
 }
 
@@ -70,11 +75,7 @@ function PaginationPrevious({
   ...props
 }: React.ComponentProps<typeof PaginationLink>) {
   return (
-    <PaginationLink
-      aria-label="Go to previous page"
-      className={clsx("gap-1 pl-2.5", className)}
-      {...props}
-    >
+    <PaginationLink className={clsx("gap-1 pl-2.5", className)} {...props}>
       <ChevronLeft className="h-4 w-4" />
       <span>Previous</span>
     </PaginationLink>

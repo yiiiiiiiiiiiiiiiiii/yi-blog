@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 // import { Inter } from "next/font/google";
-import Header from "@/components/Header";
+import Navigation from "@/components/Navigation";
 import BackToTop from "@/components/BackToTop";
+import { ThemeProvider } from "next-themes";
 import "./globals.css";
 
 // const inter = Inter({ subsets: ["latin"] });
@@ -17,11 +18,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="dark:bg-black dark:text-white px-3 pb-3 lg:px-0 lg:pb-0">
-        <Header />
-        {children}
-        <BackToTop />
+        <ThemeProvider attribute="class">
+          <Navigation />
+          {children}
+          <BackToTop />
+        </ThemeProvider>
       </body>
     </html>
   );
