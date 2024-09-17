@@ -49,6 +49,7 @@ export default function MessageForm() {
             required
             minLength={6}
             maxLength={40}
+            autoComplete="off"
           />
         </div>
         <div className="flex flex-col mb-5">
@@ -75,6 +76,7 @@ export default function MessageForm() {
             required
             minLength={15}
             maxLength={1000}
+            autoComplete="off"
           ></textarea>
         </div>
         <FormButton response={response} />
