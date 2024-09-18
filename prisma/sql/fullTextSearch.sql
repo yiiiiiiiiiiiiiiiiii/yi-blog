@@ -1,0 +1,1 @@
+SELECT * FROM "Article" WHERE to_tsvector('english', "Article"."describe") @@ to_tsquery('english', $1);
