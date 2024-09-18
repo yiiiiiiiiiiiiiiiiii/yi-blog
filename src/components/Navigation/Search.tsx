@@ -1,14 +1,46 @@
 "use client";
 
-import { Suspense, useState, useDeferredValue } from "react";
+import { useState } from "react";
+import { useDebounceFn } from "ahooks";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import IconSearch from "@/components/SvgIcon/Search";
 import SearchResults from "./SearchResults";
+import queryArticle from "@/lib/actions/queryArticle";
 
 export default function Search() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
+
   const [keyword, setKeyword] = useState("");
-  const deferredKeyword = useDeferredValue(keyword);
+  const [articles, setArticles] = useState<
+    Awaited<ReturnType<typeof queryArticle>>
+  >([]);
+
+  const fetchArticles = useDebounceFn(
+    async (keyword: string) => {
+      if (keyword) {
+        try {
+          const result = await queryArticle(keyword);
+
+          setArticles(result);
+        } catch (error) {
+          //
+        }
+        setLoading(false);
+      }
+    },
+    { wait: 300 }
+  );
+
+  // Defer the search until the user has stopped typing for 200ms
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const keyword = e.target.value;
+    setKeyword(keyword);
+    setLoading(true);
+
+    fetchArticles.run(keyword);
+  };
+
+  const [isOpen, setIsOpen] = useState(false);
 
   function open() {
     setIsOpen(true);
@@ -43,29 +75,16 @@ export default function Search() {
                 className="block w-full py-2 px-2 mt-1 text-sm border-gray-300 focus:ring-blue-500 focus:border-blue-500 text-black dark:text-white"
                 placeholder="Search article | 查找文章"
                 autoComplete="off"
-                onChange={(e) => setKeyword(e.target.value)}
+                onChange={handleInput}
               />
             </div>
 
-            <Suspense
-              fallback={
-                <div className="mt-4 text-sm font-medium">
-                  Loading... | 搜索中...
-                </div>
-              }
-            >
-              <div
-                style={{
-                  opacity: keyword !== deferredKeyword ? 0.5 : 1,
-                  transition:
-                    keyword !== deferredKeyword
-                      ? "opacity 0.2s 0.2s linear"
-                      : "opacity 0s 0s linear",
-                }}
-              >
-                <SearchResults keyword={deferredKeyword} close={close} />
-              </div>
-            </Suspense>
+            <SearchResults
+              loading={loading}
+              keyword={keyword}
+              articles={articles}
+              close={close}
+            />
           </DialogPanel>
         </div>
       </Dialog>

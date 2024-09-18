@@ -1,23 +1,27 @@
-import { use } from "react";
+import { useState, useEffect, useTransition } from "react";
 import Link from "next/link";
 import queryArticle from "@/lib/actions/queryArticle";
 
 interface SearchResultsProps {
+  loading: boolean;
   keyword: string;
+  articles: Awaited<ReturnType<typeof queryArticle>>;
   close: () => void;
 }
 
-export default function SearchResults({ keyword, close }: SearchResultsProps) {
+export default function SearchResults({
+  loading,
+  keyword,
+  articles,
+  close,
+}: SearchResultsProps) {
   if (keyword === "") {
     return null;
   }
-  const articles = use(queryArticle(keyword));
 
-  if (articles.length === 0) {
+  if (loading) {
     return (
-      <div className="mt-4 text-sm font-medium">
-        No matches articles | 未匹配到任何文章
-      </div>
+      <div className="mt-4 text-sm font-medium">Loading... | 搜索中...</div>
     );
   }
 
