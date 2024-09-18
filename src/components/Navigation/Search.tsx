@@ -28,7 +28,7 @@ export default function Search() {
         setLoading(false);
       }
     },
-    { wait: 300 }
+    { wait: 400 }
   );
 
   // Defer the search until the user has stopped typing for 200ms
