@@ -19,17 +19,12 @@ export default function ModeToggle() {
   }
 
   function toggleMode() {
-    setTheme(theme === "light" ? "dark" : "light");
+    setTheme(theme === "light" || theme === "system" ? "dark" : "light");
   }
 
   return (
-    <button
-      type="button"
-      aria-label="Toggle dark mode"
-      className="group transition "
-      onClick={toggleMode}
-    >
-      {theme === "light" ? (
+    <button type="button" className="group transition " onClick={toggleMode}>
+      {theme === "light" || theme === "system" ? (
         <IconSun className="h-6 w-6 transition hover:text-blue-500" />
       ) : (
         <IconMoon className="h-6 w-6 transition text-white hover:text-blue-500" />
