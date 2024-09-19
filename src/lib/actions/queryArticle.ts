@@ -1,10 +1,12 @@
 "use server";
 
 import prisma from "../db";
-import { fullTextSearch } from "@prisma/client/sql";
 
 export default async function queryArticle(keyword: string) {
-  const result = await prisma.$queryRawTyped(fullTextSearch(keyword));
+  const result = await prisma.$queryRawUnsafe(
+    `SELECT * FROM "Article" WHERE to_tsvector('chinese_zh', "Article"."describe") @@ to_tsquery('chinese_zh', '${keyword}');`
+  );
 
+  console.log(keyword, result);
   return result;
 }
