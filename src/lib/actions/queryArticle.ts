@@ -7,6 +7,5 @@ export default async function queryArticle(keyword: string) {
     `SELECT * FROM "Article" WHERE to_tsvector('chinese_zh', "Article"."describe") @@ to_tsquery('chinese_zh', '${keyword}');`
   );
 
-  console.log(keyword, result);
   return result;
 }
