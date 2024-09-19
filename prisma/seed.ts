@@ -29,7 +29,7 @@ async function main() {
         top: true,
       },
       {
-        title: "React Scheduler （GPT 生成测试内容）",
+        title: "React 调度器原理 （GPT 生成测试内容）",
         describe:
           "React 是一个功能强大的前端库，其核心在于高效地更新用户界面。为了实现高效的更新，React 引入了调度器（Scheduler）机制，让我们深入挖掘这一机制的底层原理。",
         content: "http://localhost:3000/markdown/ReactScheduler.mdx",
