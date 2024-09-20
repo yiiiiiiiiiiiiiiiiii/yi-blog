@@ -5,15 +5,14 @@ import { useDebounceFn } from "ahooks";
 import { Dialog, DialogPanel } from "@headlessui/react";
 import IconSearch from "@/components/SvgIcon/Search";
 import SearchResults from "./SearchResults";
+import type { ResultArticle } from "./SearchResults";
 import queryArticle from "@/lib/actions/queryArticle";
 
 export default function Search() {
   const [loading, setLoading] = useState(false);
 
   const [keyword, setKeyword] = useState("");
-  const [articles, setArticles] = useState<
-    Awaited<ReturnType<typeof queryArticle>>
-  >([]);
+  const [articles, setArticles] = useState<ResultArticle[]>([]);
 
   const fetchArticles = useDebounceFn(
     async (keyword: string) => {
@@ -21,7 +20,7 @@ export default function Search() {
         try {
           const result = await queryArticle(keyword);
 
-          setArticles(result);
+          setArticles(result as ResultArticle[]);
         } catch (error) {
           //
         }

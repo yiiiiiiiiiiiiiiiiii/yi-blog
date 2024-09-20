@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
 import IconWechat from "@/components/SvgIcon/Wechat";
 import IconEmail from "@/components/SvgIcon/Email";
@@ -61,7 +62,7 @@ export default function Page() {
                   </div>
                 </TabPanel>
                 <TabPanel>
-                  <img
+                  <Image
                     width={320}
                     src="/images/Wechat.jpg"
                     alt="微信二维码"

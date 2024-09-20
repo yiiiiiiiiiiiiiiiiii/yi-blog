@@ -24,7 +24,7 @@ export default function BackToTop(props: React.HTMLAttributes<HTMLDivElement>) {
     return () => {
       window.removeEventListener("scroll", changeButtonShow);
     };
-  }, []);
+  }, [changeButtonShow]);
 
   return (
     <div

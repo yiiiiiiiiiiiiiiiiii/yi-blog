@@ -10,12 +10,12 @@ export default function Introduction() {
       </div>
       <div className="dark:text-gray-400 text-gray-700 mb-12 max-w-6xl">
         <div className="mb-5 text-lg">
-          I'm y18i, a front-end developer, and I built this site out of interest
+          {`I'm y18i, a front-end developer, and I built this site out of interest
           to aggregate and share what I've learned. More information can be
-          found at the link below.
+          found at the link below.`}
         </div>
         <div className="text-lg">
-          我是y18i，一个前端开发，出于兴趣我建立了这个网站，汇总和分享我所学到的知识。可通过下方链接了解更多信息。
+          {` 我是y18i，一个前端开发，出于兴趣我建立了这个网站，汇总和分享我所学到的知识。可通过下方链接了解更多信息。`}
         </div>
       </div>
       <MajorButton href="/about">About Me 关于我</MajorButton>

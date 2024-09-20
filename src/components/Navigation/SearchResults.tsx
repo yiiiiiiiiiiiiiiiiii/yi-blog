@@ -1,11 +1,15 @@
-import { useState, useEffect, useTransition } from "react";
 import Link from "next/link";
-import queryArticle from "@/lib/actions/queryArticle";
+
+export interface ResultArticle {
+  id: number;
+  title: string;
+  describe: string;
+}
 
 interface SearchResultsProps {
   loading: boolean;
   keyword: string;
-  articles: Awaited<ReturnType<typeof queryArticle>>;
+  articles: ResultArticle[];
   close: () => void;
 }
 
