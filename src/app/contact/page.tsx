@@ -10,13 +10,13 @@ export default function Page() {
       <div className="mb-5 gap-y-8 w-full">
         <div className="mb-10">
           <div className="mb-6">
-            <div className="text-3xl font-bold mb-10">Contact Me 联系我</div>
+            <div className="text-3xl font-bold mb-6">Contact Me 联系我</div>
           </div>
           <div className="">
-            <div className="mb-3">
+            {/* <div className="mb-3">
               You can contact me through the following contact information, or
               leave a message
-            </div>
+            </div> */}
             <div className="">可以通过以下的联系方式联系我，或者留言</div>
           </div>
         </div>

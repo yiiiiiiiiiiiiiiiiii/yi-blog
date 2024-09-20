@@ -23,11 +23,11 @@ export default async function Page({
 
   return (
     <div>
-      <div className="text-3xl font-bold mb-10">Articles 文章</div>
+      <div className="text-3xl font-bold mb-6">Articles 文章</div>
       <div className="mb-10">
-        <div className="mb-3">
+        {/* <div className="mb-3">
           The content of the article is sorted in chronological order
-        </div>
+        </div> */}
         <div>文章的内容是按照时间先后排序的</div>
       </div>
       <div className="">

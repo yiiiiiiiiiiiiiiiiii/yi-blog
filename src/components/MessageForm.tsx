@@ -35,11 +35,11 @@ export default function MessageForm() {
 
   return (
     <div className="flex-1 w-full flex flex-col items-start  ">
-      <div className="text-lg font-bold mb-3">Leave your message｜留言</div>
+      <div className="text-lg font-bold mb-3">通过填写信息给我留言</div>
       <form className="w-full" action={sendMessageAction}>
         <div className="flex flex-col mb-5">
           <label className="text-base font-bold mb-2" htmlFor="name">
-            Name
+            姓名
           </label>
           <input
             type="text"
@@ -54,7 +54,7 @@ export default function MessageForm() {
         </div>
         <div className="flex flex-col mb-5">
           <label className="text-base font-bold  mb-2" htmlFor="email">
-            Email
+            邮箱
           </label>
           <input
             type="email"
@@ -67,7 +67,7 @@ export default function MessageForm() {
         </div>
         <div className="flex flex-col mb-2">
           <label className="text-base font-bold  mb-2" htmlFor="message">
-            Message
+            留言
           </label>
           <textarea
             name="message"
@@ -119,7 +119,7 @@ function FormButton({ response }: { response: IResponse }) {
         className="w-full text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 disabled:opacity-50"
         disabled={pending}
       >
-        Send ｜ 留言
+        留言
       </button>
     </>
   );

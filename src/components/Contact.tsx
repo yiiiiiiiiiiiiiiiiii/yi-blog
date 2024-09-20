@@ -8,12 +8,9 @@ export default function Contact() {
       </div>
       <div className="dark:text-gray-400 text-gray-700 mb-12">
         <div className="">
-          Any question is welcome to contact me, any communication makes my mind
-          wider
+          Every exchange makes my mind wider and I welcome your contact.
         </div>
-        <div className="mt-3">
-          任何问题都欢迎联系我，任何交流都让我的思维更宽广
-        </div>
+        <div className="mt-3">每一次交流都让我的思维更宽广，欢迎你的联系。</div>
       </div>
       <MajorButton href="/contact">Contact Me 联系我</MajorButton>
     </div>
