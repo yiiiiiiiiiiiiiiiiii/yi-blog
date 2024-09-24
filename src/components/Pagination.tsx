@@ -77,7 +77,7 @@ function PaginationPrevious({
   return (
     <PaginationLink className={clsx("gap-1 pl-2.5", className)} {...props}>
       <ChevronLeft className="h-4 w-4" />
-      <span>Previous</span>
+      <span>上一页</span>
     </PaginationLink>
   );
 }
@@ -93,7 +93,7 @@ function PaginationNext({
       className={clsx("gap-1 pr-2.5", className)}
       {...props}
     >
-      <span>Next</span>
+      <span>下一页</span>
       <ChevronRight className="h-4 w-4" />
     </PaginationLink>
   );
